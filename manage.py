@@ -13,7 +13,7 @@ manager = Manager(app, with_default_commands=True)
 # 添加默认执行启动服务器的命令
 @manager.command
 def default_server():
-    app.run(debug=True, host=Config.HOST, port=Config.PORT,use_reloader=False)
+    app.run(debug=True, host=Config.HOST, port=Config.PORT, use_reloader=True)
 
 
 @manager.command
@@ -36,8 +36,9 @@ def killport(port):
 
 if __name__ == '__main__':
 
-    killport(Config.PORT)
-    killport(Config.FrontPort)
+    # killport(Config.PORT)
+    # killport(Config.FrontPort)
 
-    data_list = ['run_frond', 'default_server']
-    multiProcess(function=run, data_list=data_list, parallel_num=2, type="ProcessPool")
+    # data_list = ['run_frond', 'default_server']
+    run('default_server')
+    # multiProcess(function=run, data_list=data_list, parallel_num=2, type="ProcessPool")

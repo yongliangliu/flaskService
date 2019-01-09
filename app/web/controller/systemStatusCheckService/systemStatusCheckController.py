@@ -6,8 +6,7 @@
 
 
 from app.common.util.httpUtil.responseUtil import writeSuccess2Response
-
-from app.core.model.baseModel import Result
+from app.core.model.baseModel.baseModel import Result
 from app.web import controllers
 from flask import request
 
